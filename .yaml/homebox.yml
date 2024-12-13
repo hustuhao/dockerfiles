@@ -1,0 +1,21 @@
+# refer to https://hay-kot.github.io/homebox/quick-start/
+version: "3.4"
+
+services:
+  homebox:
+    image: ghcr.io/hay-kot/homebox:latest
+    #   image: ghcr.io/hay-kot/homebox:latest-rootless
+    container_name: homebox
+    restart: always
+    environment:
+      - HBOX_LOG_LEVEL=info
+      - HBOX_LOG_FORMAT=text
+      - HBOX_WEB_MAX_UPLOAD_SIZE=10
+    volumes:
+      - /vol4/1000/Docker/homebox/:/data/
+    ports:
+      - 3100:28865
+
+volumes:
+  homebox-data:
+    driver: local
