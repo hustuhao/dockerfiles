@@ -11,10 +11,11 @@ services:
       - HBOX_LOG_LEVEL=info
       - HBOX_LOG_FORMAT=text
       - HBOX_WEB_MAX_UPLOAD_SIZE=10
+      - TZ=Asia/Shanghai
     volumes:
       - /vol4/1000/Docker/homebox/:/data/
     ports:
-      - 3100:28865
+      - 28865:7745
 
 volumes:
   homebox-data:
